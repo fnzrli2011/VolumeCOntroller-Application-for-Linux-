@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=Volume Controller
+Comment=Basit bir ses kontrolcüsü
+Exec=/usr/local/bin/volume_controller
+Icon=volume.png
+Terminal=false
+Type=Application
+Categories=Utility;
+

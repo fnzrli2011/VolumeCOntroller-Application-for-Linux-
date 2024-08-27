@@ -1,0 +1,22 @@
+# Maintainer: Sizin Adınız <email@ornek.com>
+pkgname=volume-controller
+pkgver=1.0
+pkgrel=1
+pkgdesc="Basit bir ses kontrolcüsü"
+arch=('x86_64')
+url="https://github.com/kullaniciadi/volume-controller"
+license=('MIT')
+depends=('raylib')
+source=("main.cpp" "Makefile")
+md5sums=('SKIP' 'SKIP')
+
+build() {
+  cd "$srcdir"
+  make
+}
+
+package() {
+  cd "$srcdir"
+  install -Dm755 volume_controller "$pkgdir/usr/local/bin/volume_controller"
+}
+

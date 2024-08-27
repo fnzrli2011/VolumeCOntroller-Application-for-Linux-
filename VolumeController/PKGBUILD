@@ -7,8 +7,8 @@ arch=('x86_64')
 url="https://github.com/kullaniciadi/volume-controller"
 license=('MIT')
 depends=('raylib')
-source=("main.cpp" "Makefile")
-md5sums=('SKIP' 'SKIP')
+source=("main.cpp" "Makefile" "volume-controller.desktop")
+md5sums=('SKIP' 'SKIP' 'SKIP')
 
 build() {
   cd "$srcdir"
@@ -17,6 +17,16 @@ build() {
 
 package() {
   cd "$srcdir"
-  install -Dm755 volume_controller "$pkgdir/usr/local/bin/volume_controller"
-}
 
+  # Uygulama dosyasını kopyala
+  install -Dm755 volume_controller "$pkgdir/usr/local/bin/volume_controller"
+
+  # .desktop dosyasını kopyala
+  install -Dm644 volume-controller.desktop "$pkgdir/usr/share/applications/volume-controller.desktop"
+
+  # Ayrıca, kullanıcı özelindeki dizine de kopyala
+  install -Dm644 volume-controller.desktop "$pkgdir/usr/share/applications/volume-controller.desktop"
+
+  # İkon dosyasını kopyala
+  install -Dm644 volume.png "$pkgdir/usr/share/pixmaps/volume.png"
+}

@@ -1,0 +1,11 @@
+[Desktop Entry]
+Name=Volume Controller
+Comment=Basit bir ses kontrolcüsü
+Exec=/usr/local/bin/volume_controller
+#Enter volumecontroller file path and volume2.png
+#then you copy .desktop file and paste to /home/your usernname/.local/share/application
+Icon=/home/mrcat/Application/Volume_COntroller.v2/volume2.png
+Terminal=false
+Type=Application
+Categories=Utility;
+
